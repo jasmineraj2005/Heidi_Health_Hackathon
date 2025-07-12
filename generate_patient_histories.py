@@ -1,45 +1,76 @@
 prompt_text = '''
-When taking clinical patient histories, several key areas are important to document thoroughly:
+When taking a clinical patient history over an extended period (5-10 years), it is essential to document a comprehensive and thorough record. Each follow-up should detail the patient's condition and progress with their General Practitioner (GP). The following areas should be covered during the patient history collection:
 
-Chief Complaint and Present Illness
-The patient's primary concern in their own words, followed by a detailed chronological account of the current symptoms 
-including onset, duration, quality, severity, aggravating and relieving factors, and associated symptoms.
+1. Chief Complaint and Present Illness: 
+    Document the patient's primary concern, expressed in their own words.
+    Provide a detailed account of symptoms, including:
+    - Onset
+    - Duration
+    - Quality
+    - Severity
+    - Aggravating and relieving factors
+    - Associated symptoms
 
-Past Medical History
-Previous diagnoses, hospitalizations, surgeries, injuries, and chronic conditions. This provides context for current 
-symptoms and helps identify patterns or risk factors.
+2. Past Medical History:
+    - Include previous diagnoses, hospitalizations, surgeries, injuries, chronic conditions, and relevant treatments.
+    - This context helps to identify potential patterns or risk factors for the current symptoms.
 
-Medications and Allergies
-Current medications (including dosages, over-the-counter drugs, and supplements), previous medications, and any known 
-allergies or adverse drug reactions with specific details about the nature of the reaction.
+3. Medications and Allergies:
+    - List all current medications, dosages, over-the-counter drugs, and supplements.
+    - Include details about past medications and any allergies or adverse drug reactions, specifying the type of reaction.
 
-Family History
-Hereditary conditions, genetic disorders, and diseases with familial tendencies in immediate family members. 
-This helps assess genetic risk factors for various conditions.
+4. Family History:
+    - Record any hereditary conditions, genetic disorders, or diseases present in immediate family members.
+    This provides insight into potential genetic risk factors.
 
-Social History
-Lifestyle factors including tobacco, alcohol, and substance use, occupation, living situation, sexual history, travel 
-history, and social support systems. These factors significantly impact health outcomes and treatment planning.
+5. Social History:
+    - Include lifestyle factors such as:
+    - Tobacco use
+    - Alcohol and substance use
+    - Occupation
+    - Living situation
+    - Sexual history
+    - Travel history
+    - Social support systems
+    These factors can significantly impact health outcomes.
 
-Review of Systems
-A systematic inquiry about symptoms in each body system, even if not related to the chief complaint. This helps 
-identify additional problems that might otherwise be overlooked.
+6. Review of Systems:
+    - Conduct a thorough inquiry into symptoms across all body systems, even if they are not directly related to the chief complaint.
+    - This helps identify other possible conditions that may have been overlooked.
 
-Immunization History
-Current vaccination status, especially important for preventive care and when considering certain treatments or procedures.
-The key is to be thorough yet efficient, asking open-ended questions initially and then following up with specific 
-details. Active listening and creating a comfortable environment for patients to share sensitive information is equally 
-important as the clinical facts gathered.
+7. Immunization History:
+    - Include details about current vaccination status, especially for preventive care and relevant treatments.
 
-Using these kinds of factors as a template, simulate a complex case history over an extended period of time of 5-10 
-years, outputting each as disparate entries.
+Format:
+- First Name: Patient's first name
+- Last Name: Patient's last name
+- Gender: Male/Female/Trans
+- Age: The patient's age
+- Ethnicity: The patient's ethnic background
+- Date and Time of Appointment (in 24-hour format: "DD/MM/YYYY HH:MM:SS")
+- Importance Order: List all the sections in order of importance based on the patient's condition (e.g., ["chiefComplaintAndPresentIllness", "medicationsAndAllergies", "reviewOfSystems", etc.]).
+- Chief Complaint and Present Illness: A detailed description of the primary complaint and current symptoms, including key dates and events.
+- Past Medical History: Document previous diagnoses, conditions, surgeries, etc.
+- Medications and Allergies: Include medications, dosages, and allergies.
+- Family History: Include relevant familial conditions or genetic factors.
+- Social History: Lifestyle factors affecting the patient's health.
+- Review of Systems: A detailed check of symptoms across all body systems.
+- Immunization History: Document vaccination status.
 
-When generating these case notes, only include follow-ups with the GP (General Practitioner). Assume the patient is 
-continuing only with a single GP.
+For Follow-Up Appointments:
+- Follow-Up New Details: Include any new symptoms, diagnoses, medications, or conditions since the previous appointment. The information should be presented as a Markdown-formatted summary.
+- Follow-Up Assessment/Plan: Provide a summary of the GP's assessment and the plan moving forward. This should also be formatted in Markdown.
+
+Output Format:
 
 Output this as JSON to the following TypeScript schema:
 
 type InitialClinicalPatientHistory = {
+    first_name: string;
+    last_name: string;
+    gender: string;
+    age: integer; 
+    ethnicity: string;
     dateAndTimeOfAppointment: string;
     importanceOrder: string[];
     chiefComplaintAndPresentIllness: string;
@@ -71,4 +102,3 @@ type Output = {
 from gemini_api import gemini_get_basic_text_prompt_output
 
 print(gemini_get_basic_text_prompt_output(prompt_text))
-
