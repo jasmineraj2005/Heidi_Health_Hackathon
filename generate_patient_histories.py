@@ -99,6 +99,6 @@ type Output = {
 };
 '''
 
-from gemini_api import gemini_get_basic_text_prompt_output
+# from gemini_api import gemini_get_basic_text_prompt_output
 
-print(gemini_get_basic_text_prompt_output(prompt_text))
+# print(gemini_get_basic_text_prompt_output(prompt_text))

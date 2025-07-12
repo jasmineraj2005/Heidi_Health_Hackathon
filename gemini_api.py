@@ -7,7 +7,7 @@ from google.oauth2 import service_account
 
 
 dn = os.path.dirname(os.path.realpath(__file__))
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = str(next(Path(dn).glob('gen_lang_client*.json')))
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = str(next(Path(dn).glob('gen-lang-client*.json')))
 credentials = service_account.Credentials.from_service_account_file(
     os.getenv("GOOGLE_APPLICATION_CREDENTIALS"),
     scopes=["https://www.googleapis.com/auth/cloud-platform"],

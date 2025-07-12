@@ -1,5 +1,6 @@
-gen_lang_client*.json
+gen-lang-client*.json
 .ds_store
+__pycache__
 .env
 venv
 node_modules

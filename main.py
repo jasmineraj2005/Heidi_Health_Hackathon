@@ -1,9 +1,11 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from starlette.responses import StreamingResponse
+from starlette.requests import Request
 from typing import List, Optional
 import json
-from gemini_api import gemini_get_basic_text_prompt_output
+from gemini_api import gemini_get_basic_text_prompt_output, gemini_async_stream_basic_text_prompt_output
 from generate_patient_histories import prompt_text
 
 
@@ -87,6 +89,37 @@ async def patient_summary(request: PatientSummaryRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error generating patient summary: {str(e)}")
 
+@app.post("/free_text_patient_summary")
+async def free_text_patient_summary(request: Request):
+    """
+    Generate a free-text patient summary using a free-text prompt
+    """
+    body = await request.json()
+    input_message = body.get("input_message", "")
+
+    try:
+        # Create a prompt for generating a free-text patient summary
+        summary_prompt = f"""
+        Generate a free-text patient summary based on the following question:
+        {input_message}
+        The summary should be detailed and capture all relevant clinical information.
+        """
+        
+        # Get the summary from Gemini
+        summary = gemini_async_stream_basic_text_prompt_output(
+            user_prompt_text=summary_prompt,
+            system_prompt_text=(
+                "You are a medical assistant. Provide detailed, professional patient summaries. "
+                "Always respond with github-compatible markdown format, using tables for structured data where appropriate."
+            )
+        )
+
+        return StreamingResponse(
+            summary,
+            media_type="text/event-stream"
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error generating free-text patient summary: {str(e)}")
 
 @app.post("/generate_patient_history", response_model=PatientHistoryResponse)
 async def generate_patient_history():
@@ -119,4 +152,4 @@ async def generate_patient_history():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
