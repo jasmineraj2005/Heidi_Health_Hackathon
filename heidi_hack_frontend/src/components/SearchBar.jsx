@@ -9,7 +9,7 @@ function SearchBar({ input, setInput, handleSubmit, isStreaming }) {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder={isStreaming ? 'Waiting...' : 'Send a message'}
+          placeholder={isStreaming ? 'Waiting...' : 'Search patient notes...'}
           disabled={isStreaming}
         />
       </form>
