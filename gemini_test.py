@@ -2,10 +2,12 @@ import os
 from google import genai
 from typing import Optional
 from google.genai import types
+from pathlib import Path
 from google.oauth2 import service_account
 
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/home/david/dev/Heidi_health_Hackathon/gen_lang_client.json'
+dn = os.path.dirname(os.path.realpath(__file__))
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = str(next(Path(dn).glob('gen_lang_client*.json')))
 credentials = service_account.Credentials.from_service_account_file(
     os.getenv("GOOGLE_APPLICATION_CREDENTIALS"),
     scopes=["https://www.googleapis.com/auth/cloud-platform"],
@@ -72,8 +74,13 @@ async def gemini_async_stream_basic_text_prompt_output(
 
 
 if __name__ == "__main__":
-    for text in gemini_stream_basic_text_prompt_output(
+    print(gemini_get_basic_text_prompt_output(
         user_prompt_text="What is the meaning of life?",
         system_prompt_text="You are a helpful assistant.",
-    ):
-        print(text)
+    ))
+
+    #for text in gemini_stream_basic_text_prompt_output(
+    #    user_prompt_text="What is the meaning of life?",
+    #    system_prompt_text="You are a helpful assistant.",
+    #):
+    #    print(text)
