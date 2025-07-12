@@ -1,9 +1,14 @@
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import SearchBar from './SearchBar'
+import PromptAssistant from './PromptAssistant'
 import HindsightLogo from '../assets/hindsight_logo.svg'
 
 function MiddleRenderZone({ messages, input, setInput, handleSubmit, isStreaming }) {
+  const handlePromptSelect = (promptText) => {
+    setInput(promptText);
+  };
+
   return (
     <div className="middle-zone">
       <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
@@ -17,6 +22,10 @@ function MiddleRenderZone({ messages, input, setInput, handleSubmit, isStreaming
           handleSubmit={handleSubmit}
           isStreaming={isStreaming}
         />
+      </div>
+
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
+        <PromptAssistant onPromptSelect={handlePromptSelect} />
       </div>
       
       <div className="chat-history">

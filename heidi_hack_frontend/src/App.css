@@ -20,8 +20,7 @@ body, html {
 }
 
 /* Component widths */
-.left-nav,
-.right-nav {
+.left-nav {
   width: 20%;
   background-color: #fff;
   padding: 1rem;
@@ -29,14 +28,25 @@ body, html {
   color: #222;
 }
 
+.right-nav {
+  width: 30%;
+  background-color: #fff;
+  padding: 1rem;
+  box-sizing: border-box;
+  color: #222;
+}
+
 .middle-zone {
-  width: 60%;
+  width: 50vw;
+  margin-left: 20vw;
+  margin-right: 30vw;
   display: flex;
   flex-direction: column;
   background-color: #fafafa;
   padding: 1rem;
   box-sizing: border-box;
   color: #222;
+  min-height: 100vh;
 }
 
 /* Search bar */

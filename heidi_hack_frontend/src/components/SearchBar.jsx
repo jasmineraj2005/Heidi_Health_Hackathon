@@ -8,9 +8,9 @@ function SearchBar({ input, setInput, handleSubmit, isStreaming }) {
   const searchContainerRef = useRef(null);
   
   const placeholderData = [
-    { text: "Reflect & Learn", icon: "🧠" },
-    { text: "Recall", icon: "💭" },
-    { text: "Pattern Clusters", icon: "🔍" }
+    { text: "Reflect & Learn", icon: "🧠", color: "#8B5CF6" },
+    { text: "Recall", icon: "🔁", color: "var(--color-primary)" },
+    { text: "Pattern Clusters", icon: "📊", color: "#10B981" }
   ];
 
   useEffect(() => {
@@ -160,8 +160,8 @@ function SearchBar({ input, setInput, handleSubmit, isStreaming }) {
                         alignItems: 'center',
                         gap: '8px',
                         fontSize: '18px',
-                        color: 'var(--color-text-muted)',
-                        fontWeight: '400'
+                        color: placeholderData[currentTextIndex].color,
+                        fontWeight: '500'
                       }}
                     >
                       <Motion.span
@@ -174,11 +174,19 @@ function SearchBar({ input, setInput, handleSubmit, isStreaming }) {
                           repeat: Infinity,
                           ease: "easeInOut"
                         }}
-                        style={{ fontSize: '20px' }}
+                        style={{ 
+                          fontSize: '20px',
+                          filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))'
+                        }}
                       >
                         {placeholderData[currentTextIndex].icon}
                       </Motion.span>
-                      <span>{placeholderData[currentTextIndex].text}</span>
+                      <span style={{ 
+                        fontWeight: '600',
+                        textShadow: '0 1px 2px rgba(0,0,0,0.1)'
+                      }}>
+                        {placeholderData[currentTextIndex].text}
+                      </span>
                     </Motion.div>
                   </AnimatePresence>
                 </div>

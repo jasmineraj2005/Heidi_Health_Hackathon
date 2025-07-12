@@ -1,6 +1,10 @@
 .smart-refine-panel {
-  width: 320px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20vw;
   min-height: 100vh;
+  height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   backdrop-filter: blur(20px);
   border-right: 1px solid rgba(255, 255, 255, 0.1);
@@ -8,6 +12,7 @@
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+  z-index: 10;
 }
 
 .smart-refine-panel::-webkit-scrollbar {
