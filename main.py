@@ -4,6 +4,7 @@ from pydantic import BaseModel
 from starlette.responses import StreamingResponse
 from starlette.requests import Request
 from typing import List, Optional
+from pathlib import Path
 import json
 from gemini_api import gemini_get_basic_text_prompt_output, gemini_async_stream_basic_text_prompt_output
 from generate_patient_histories import prompt_text
@@ -97,6 +98,8 @@ async def free_text_patient_summary(request: Request):
     body = await request.json()
     input_message = body.get("input_message", "")
 
+    patients_json_text = (Path(__file__).parent / "patient_histories" / "patients.json").read_text(encoding="utf-8")
+
     try:
         # Create a prompt for generating a free-text patient summary
         summary_prompt = f"""
@@ -111,6 +114,8 @@ async def free_text_patient_summary(request: Request):
             system_prompt_text=(
                 "You are a medical assistant. Provide detailed, professional patient summaries. "
                 "Always respond with github-compatible markdown format, using tables for structured data where appropriate."
+                "Here is the patient histories data for reference:\n\n"
+                f"```json\n{patients_json_text}\n```"
             )
         )
 
@@ -120,6 +125,39 @@ async def free_text_patient_summary(request: Request):
         )
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error generating free-text patient summary: {str(e)}")
+
+@app.post("/get_patient_from_query", response_model=PatientSummaryRequest)
+async def get_patient_from_query(request: Request):
+    """
+    Retrieve patient information based on a query.
+    """
+    body = await request.json()
+    query = body.get("query", "")
+
+    patients_json_text = (Path(__file__).parent / "patient_histories" / "patients.json").read_text(encoding="utf-8")
+
+    try:
+        # Create a prompt for retrieving patient information
+        retrieval_prompt = f"""
+        Retrieve patient name information based on the following query:
+        {query}
+        Here is the patient histories data for reference:
+        ```json
+        {patients_json_text}
+        ```
+
+        The response should be a JSON object with one key only: "patientName"
+        """
+
+        # Get the patient information from Gemini
+        patient_info = gemini_get_basic_text_prompt_output(
+            user_prompt_text=retrieval_prompt,
+            system_prompt_text="You are a medical assistant. Provide detailed, professional patient information."
+        )
+
+        return json.loads(patient_info)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error retrieving patient information: {str(e)}")
 
 @app.post("/generate_patient_history", response_model=PatientHistoryResponse)
 async def generate_patient_history():
