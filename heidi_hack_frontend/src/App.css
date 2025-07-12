@@ -45,10 +45,14 @@ body, html {
   background-color: #eaeaea;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 0 2rem;
   box-sizing: border-box;
   border-bottom: 1px solid #ccc;
+}
+
+.search-bar form {
+  flex: 1;
 }
 
 .search-bar input {
@@ -60,6 +64,44 @@ body, html {
   border: 1px solid #ccc;
   background: #fff;
   color: #222;
+}
+
+.header-bar {
+  height: 10%;
+  background-color: #eaeaea;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
+}
+
+.logo-header {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.logo-header img {
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 40px;
+}
+
+.middle-zone .search-bar {
+  width: 100%;
+  background: none;
+  border-bottom: none;
+  box-shadow: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.middle-zone .search-bar input {
+  width: 100%;
+  max-width: 100%;
 }
 
 /* Chat UI */

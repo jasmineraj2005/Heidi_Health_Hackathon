@@ -1,10 +1,10 @@
 import './App.css'
-import SearchBar from './components/SearchBar'
 import LeftNav from './components/LeftNav'
 import RightNav from './components/RightNav'
 import MiddleRenderZone from './components/MiddleRenderZone'
 import { useState } from 'react'
 import { streamAssistantResponse } from './api/useChatStream'
+import LogoHeader from './components/LogoHeader'
 
 function App() {
   const [messages, setMessages] = useState([
@@ -33,15 +33,18 @@ function App() {
 
   return (
     <div className="app-layout">
-      <SearchBar
-        input={input}
-        setInput={setInput}
-        handleSubmit={handleSubmit}
-        isStreaming={isStreaming}
-      />
+      <div className="header-bar">
+        <LogoHeader />
+      </div>
       <div className="main-section">
         <LeftNav />
-        <MiddleRenderZone messages={messages} />
+        <MiddleRenderZone
+          messages={messages}
+          input={input}
+          setInput={setInput}
+          handleSubmit={handleSubmit}
+          isStreaming={isStreaming}
+        />
         <RightNav sentQuery={sentQuery} />
       </div>
     </div>
