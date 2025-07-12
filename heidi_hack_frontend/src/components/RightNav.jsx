@@ -130,12 +130,12 @@ function ReadingLink({ item }) {
   )
 }
 
-function ReasoningReflection({ sentQuery }) {
+function ReasoningReflection({ sentQuery, isStreaming }) {
   const [selectedCards, setSelectedCards] = useState([])
   const [show, setShow] = useState(false)
 
   useEffect(() => {
-    if (sentQuery) {
+    if (sentQuery && !isStreaming) {
       setShow(false)
       // Simulate API call to get reasoning insights
       dashboardAPI(sentQuery).then(val => {
@@ -145,7 +145,7 @@ function ReasoningReflection({ sentQuery }) {
         setTimeout(() => setShow(true), 100)
       })
     }
-  }, [sentQuery])
+  }, [sentQuery, isStreaming])
 
   const visibleCards = selectedCards.map(index => reasoningCards[index])
 
@@ -178,12 +178,12 @@ function ReasoningReflection({ sentQuery }) {
   )
 }
 
-function RecommendedReading({ sentQuery }) {
+function RecommendedReading({ sentQuery, isStreaming }) {
   const [selectedReading, setSelectedReading] = useState([])
   const [show, setShow] = useState(false)
 
   useEffect(() => {
-    if (sentQuery) {
+    if (sentQuery && !isStreaming) {
       setShow(false)
       // Simulate API call to get recommended reading
       recommendationAPI(sentQuery).then(val => {
@@ -193,7 +193,7 @@ function RecommendedReading({ sentQuery }) {
         setTimeout(() => setShow(true), 100)
       })
     }
-  }, [sentQuery])
+  }, [sentQuery, isStreaming])
 
   const visibleReading = selectedReading.map(index => recommendedReading[index])
 
@@ -224,11 +224,11 @@ function RecommendedReading({ sentQuery }) {
   )
 }
 
-function RightNav({ sentQuery }) {
+function RightNav({ sentQuery, isStreaming }) {
   return (
     <div className="right-nav">
-      <ReasoningReflection sentQuery={sentQuery} />
-      <RecommendedReading sentQuery={sentQuery} />
+      <ReasoningReflection sentQuery={sentQuery} isStreaming={isStreaming} />
+      <RecommendedReading sentQuery={sentQuery} isStreaming={isStreaming} />
     </div>
   )
 }
