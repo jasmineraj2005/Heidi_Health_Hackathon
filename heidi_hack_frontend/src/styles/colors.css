@@ -1,0 +1,33 @@
+:root {
+    /* Primary brand colors */
+    --color-primary: #1F4D91;
+    --color-primary-light: #A3BCE2;
+  
+    /* Backgrounds */
+    --color-bg: #F9FAFB;
+    --color-sidebar: #F1F5F9;
+    --color-surface: #FFFFFF;
+  
+    /* Borders and dividers */
+    --color-border: #E2E8F0;
+  
+    /* Text */
+    --color-text-primary: #1E293B;
+    --color-text-muted: #475569;
+  
+    /* States */
+    --color-success: #10B981;
+    --color-error: #EF4444;
+    --color-info: #3B82F6;
+    --color-highlight: #EEF4FF;
+  }
+  
+  /* Utility example classes (optional, helpful for quick styling) */
+  .bg-primary         { background-color: var(--color-primary); }
+  .bg-surface         { background-color: var(--color-surface); }
+  .bg-sidebar         { background-color: var(--color-sidebar); }
+  .bg-highlight       { background-color: var(--color-highlight); }
+  
+  .text-primary       { color: var(--color-text-primary); }
+  .text-muted         { color: var(--color-text-muted); }
+  .border-default     { border-color: var(--color-border); }

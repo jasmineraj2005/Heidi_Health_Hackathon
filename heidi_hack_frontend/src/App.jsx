@@ -1,4 +1,5 @@
 import './App.css'
+import './styles/colors.css';
 import LeftNav from './components/LeftNav'
 import RightNav from './components/RightNav'
 import MiddleRenderZone from './components/MiddleRenderZone'
@@ -32,10 +33,8 @@ function App() {
   }
 
   return (
-    <div className="app-layout">
-      <div className="header-bar">
-        <LogoHeader />
-      </div>
+    <div className="app-layout" style={{ backgroundColor: 'var(--color-bg)', color: 'var(--color-text-primary)' }}>
+   
       <div className="main-section">
         <LeftNav />
         <MiddleRenderZone
