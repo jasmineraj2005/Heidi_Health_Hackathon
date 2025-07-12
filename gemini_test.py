@@ -18,6 +18,18 @@ gemini_client = genai.Client(
 )
 
 
+def gemini_get_basic_text_prompt_output(
+    user_prompt_text: str,
+    system_prompt_text: Optional[str] = None,
+    gemini_model: str = 'gemini-2.5-flash',
+):
+    return ''.join(list(gemini_stream_basic_text_prompt_output(
+        user_prompt_text=user_prompt_text,
+        system_prompt_text=system_prompt_text,
+        gemini_model=gemini_model,
+    )))
+
+
 def gemini_stream_basic_text_prompt_output(
     user_prompt_text: str,
     system_prompt_text: Optional[str] = None,
