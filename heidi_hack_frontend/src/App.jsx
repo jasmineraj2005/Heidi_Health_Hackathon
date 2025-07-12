@@ -12,10 +12,13 @@ function App() {
   ])
   const [input, setInput] = useState('')
   const [isStreaming, setIsStreaming] = useState(false)
+  const [sentQuery, setSentQuery] = useState('')
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (!input.trim()) return
+
+    setSentQuery(input) // Only update sentQuery on submit
 
     const userMessage = { role: 'user', text: input }
     const placeholder = { role: 'assistant', text: '...' }
@@ -39,7 +42,7 @@ function App() {
       <div className="main-section">
         <LeftNav />
         <MiddleRenderZone messages={messages} />
-        <RightNav />
+        <RightNav sentQuery={sentQuery} />
       </div>
     </div>
   )
