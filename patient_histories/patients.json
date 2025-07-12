@@ -1,0 +1,134 @@
+[{
+  "initialClinicalPatientHistory": {
+    "first_name": "Karen",
+    "last_name": "Williams",
+    "gender": "Female",
+    "age": 70,
+    "ethnicity": "Caucasian",
+    "dateAndTimeOfAppointment": "15/05/2025 11:00:00",
+    "importanceOrder": [
+      "chiefComplaintAndPresentIllness",
+      "medicationsAndAllergies",
+      "reviewOfSystems",
+      "pastMedicalHistory",
+      "socialHistory",
+      "familyHistory",
+      "immunizationHistory"
+    ],
+    "chiefComplaintAndPresentIllness": "Karen Williams presents for follow-up after a transient ischemic attack (TIA) in April 2025. She experienced sudden left-sided weakness and speech difficulty, which resolved within 30 minutes. No residual deficits. Concerns about stroke prevention and management of hypertension and cholesterol.",
+    "pastMedicalHistory": "Karen has a history of hypertension, managed with medication. No previous strokes or heart attacks. No history of diabetes or significant neurological conditions.",
+    "medicationsAndAllergies": "Currently on Aspirin 81 mg daily, Clopidogrel 75 mg daily, Lisinopril 20 mg daily for hypertension, and Atorvastatin 40 mg daily for cholesterol. No known allergies.",
+    "familyHistory": "Father had a stroke at age 68, mother had hypertension and diabetes.",
+    "socialHistory": "Non-smoker, moderate alcohol use. Lives with spouse. No significant physical activity but encouraged to walk regularly post-TIA.",
+    "reviewOfSystems": "No new neurological symptoms, no chest pain or shortness of breath. No gastrointestinal complaints or visual disturbances.",
+    "immunizationHistory": "Up-to-date with routine vaccinations, including the flu vaccine received last fall."
+  },
+  "patientFollowUps": [
+    {
+      "dateAndTimeOfAppointment": "15/06/2025 10:00:00",
+      "followUpNewDetailsMarkdown": "Karen has remained stable since her TIA. She has no new symptoms and continues on her antiplatelet therapy as prescribed. Blood pressure and cholesterol are being monitored closely. She has not had any recurrence of neurological symptoms.",
+      "followUpAssessmentPlanMarkdown": "Continue antiplatelet therapy (Aspirin and Clopidogrel) and monitor blood pressure and cholesterol. Consider repeat carotid ultrasound in 6 months to monitor artery status. Encourage regular physical activity, including walking. Follow up in 3 months to reassess treatment plan."
+    }
+  ]
+},
+{
+  "initialClinicalPatientHistory": {
+    "first_name": "James",
+    "last_name": "Harrison",
+    "gender": "Male",
+    "age": 62,
+    "ethnicity": "Caucasian",
+    "dateAndTimeOfAppointment": "06/01/2025 14:00:00",
+    "importanceOrder": [
+      "chiefComplaintAndPresentIllness",
+      "medicationsAndAllergies",
+      "reviewOfSystems",
+      "pastMedicalHistory",
+      "socialHistory",
+      "familyHistory",
+      "immunizationHistory"
+    ],
+    "chiefComplaintAndPresentIllness": "James Harrison presents for post-heart attack follow-up. He is recovering well from a myocardial infarction (MI) in May 2024 and is managing his hypertension and cholesterol. He has no chest pain or shortness of breath, but reports occasional fatigue during physical exertion.",
+    "pastMedicalHistory": "James has a history of hypertension, high cholesterol, and a recent myocardial infarction. He underwent angioplasty and stent placement in May 2024. No previous heart attacks or strokes. No significant surgeries.",
+    "medicationsAndAllergies": "Currently on Atorvastatin 40 mg daily for cholesterol, Lisinopril 10 mg daily for hypertension, and dual antiplatelet therapy (Aspirin, Clopidogrel). No known allergies.",
+    "familyHistory": "Father had a myocardial infarction at age 55. Mother had hypertension and diabetes.",
+    "socialHistory": "Former smoker (quit 10 years ago), occasional alcohol use. Sedentary lifestyle at work but active after rehab (walking, swimming). Lives with his spouse.",
+    "reviewOfSystems": "No chest pain, dyspnea, or palpitations. No gastrointestinal issues. Some fatigue with exercise.",
+    "immunizationHistory": "Up-to-date with flu vaccine and standard vaccinations."
+  },
+  "patientFollowUps": [
+    {
+      "dateAndTimeOfAppointment": "14/06/2025 10:00:00",
+      "followUpNewDetailsMarkdown": "James has made good progress since his MI in May 2024. His cholesterol has decreased to target levels, and his blood pressure is well-managed with medication. He has no new symptoms such as chest pain, but occasionally feels fatigued during physical exertion. He has been following his rehabilitation regimen and maintaining regular exercise.",
+      "followUpAssessmentPlanMarkdown": "Continue current medications, including statin and antihypertensive therapy. Monitor cholesterol and blood pressure regularly. Encourage continued physical activity. Consider repeat coronary angiography in 2 years to assess stent patency and coronary health."
+    }
+  ]
+},
+{
+  "initialClinicalPatientHistory": {
+    "first_name": "John",
+    "last_name": "Parker",
+    "gender": "Male",
+    "age": 65,
+    "ethnicity": "Caucasian",
+    "dateAndTimeOfAppointment": "10/04/2025 14:00:00",
+    "importanceOrder": [
+      "chiefComplaintAndPresentIllness",
+      "medicationsAndAllergies",
+      "reviewOfSystems",
+      "pastMedicalHistory",
+      "socialHistory",
+      "familyHistory",
+      "immunizationHistory"
+    ],
+    "chiefComplaintAndPresentIllness": "John Parker presents with a complaint of chest pain that occurs during physical exertion, along with increasing shortness of breath. He has noticed these symptoms over the past 3 months, but they have worsened recently. The chest pain is described as tight and pressure-like and occurs when walking or climbing stairs. He also reports occasional dizziness with exertion. The patient is concerned about possible heart disease, as he has a history of hypertension and high cholesterol. He has had no previous cardiovascular events but is aware of his family history of heart disease.",
+    "pastMedicalHistory": "John has a long-standing history of hypertension, poorly controlled for several years. He also has high cholesterol, diagnosed 10 years ago. He denies any history of myocardial infarction, stroke, or other major cardiovascular events. No surgeries or hospitalizations related to cardiovascular disease. He was previously a smoker but quit 5 years ago. He has not had any known surgeries, including cardiac procedures. He is not diabetic or obese.",
+    "medicationsAndAllergies": "John is currently on Atorvastatin 40 mg daily for hypercholesterolemia. He is also prescribed Lisinopril 10 mg daily for hypertension. No known drug allergies. He occasionally takes aspirin for general pain relief and ibuprofen for minor muscle aches. He has had no reported adverse reactions to medications.",
+    "familyHistory": "John’s father had a myocardial infarction at age 60, and his mother had high blood pressure and diabetes. He has two siblings with no known cardiovascular disease. No other significant hereditary conditions noted in the family.",
+    "socialHistory": "John is a former smoker (quit 5 years ago) and drinks alcohol occasionally (2-3 drinks per week). He works as an office manager and has a mostly sedentary lifestyle, though he has recently begun walking and doing mild exercise daily. He maintains a fairly unhealthy diet high in processed foods, which he has been instructed to reduce. He lives alone and has a close network of friends and family who provide emotional support. No recent travel history.",
+    "reviewOfSystems": "John denies experiencing chest pain at rest or any palpitations. He has no history of syncope or dizziness except when climbing stairs. No gastrointestinal complaints such as nausea, vomiting, or abdominal pain. Denies any neurological issues like weakness, numbness, or visual disturbances. No musculoskeletal pain or joint problems.",
+    "immunizationHistory": "John is up-to-date on vaccinations, including the flu vaccine he received in October 2024. He has had all standard childhood vaccines and is current with his tetanus and pneumonia vaccinations. No history of adverse reactions to vaccines.",
+  },
+  "patientFollowUps": [
+    {
+      "dateAndTimeOfAppointment": "10/05/2025 10:00:00",
+      "followUpNewDetailsMarkdown": "Since the last appointment, John has experienced a reduction in chest pain and shortness of breath with physical exertion. His lipid levels have improved significantly with atorvastatin, and his LDL has decreased from 190 mg/dL to 160 mg/dL. John has adopted lifestyle changes, including reducing saturated fat in his diet and increasing his physical activity. However, he still experiences occasional dizziness, especially when exerting himself. He has not reported any new cardiovascular symptoms such as palpitations or swelling.",
+      "followUpAssessmentPlanMarkdown": "John’s cholesterol levels have improved significantly with statin therapy and lifestyle changes. Continue atorvastatin 40 mg daily and monitor for any side effects or further symptoms. Recommend increasing physical activity with structured cardiovascular exercises. If symptoms persist or worsen, consider imaging or further testing to assess the progression of atherosclerosis. Plan a follow-up stress test in 6 months to assess heart function under exertion."
+    }
+  ]
+},
+
+{
+  "initialClinicalPatientHistory": {
+    "first_name": "Sarah",
+    "last_name": "Mitchell",
+    "gender": "Female",
+    "age": 58,
+    "ethnicity": "Caucasian",
+    "dateAndTimeOfAppointment": "14/04/2025 14:30:00",
+    "importanceOrder": [
+      "chiefComplaintAndPresentIllness",
+      "medicationsAndAllergies",
+      "reviewOfSystems",
+      "pastMedicalHistory",
+      "socialHistory",
+      "familyHistory",
+      "immunizationHistory"
+    ],
+    "chiefComplaintAndPresentIllness": "Sarah Mitchell presents with elevated cholesterol levels, identified through routine blood tests. She is asymptomatic, reporting no chest pain, shortness of breath, or fatigue, but has concerns about her heart health due to her family history of cardiovascular disease. Her primary concern has been gradual and related to her risk factors. Mild dizziness, attributed to stress, is the only associated symptom.",
+    "pastMedicalHistory": "Sarah has a history of mild hypertension, well-controlled through diet and exercise. She has no history of cardiovascular events like heart attacks or strokes. No prior surgeries or hospitalizations, and no history of diabetes, thyroid problems, or kidney disease.",
+    "medicationsAndAllergies": "Currently prescribed Atorvastatin 20 mg daily for hypercholesterolemia. No known drug allergies or adverse drug reactions. She takes a daily multivitamin and occasionally uses ibuprofen for headaches.",
+    "familyHistory": "Father had a myocardial infarction at 45 and mother suffered a stroke at 60. Both parents had hypertension and high cholesterol.",
+    "socialHistory": "Non-smoker, occasional social alcohol consumption. Works as a school teacher and lives alone. Maintains an active social life with regular engagement with family and friends. No recent travel history. Follows a regular physical activity regimen, including walking and swimming. Strong family support system.",
+    "reviewOfSystems": "No chest pain, dyspnea, or palpitations. Denies gastrointestinal symptoms, headaches, dizziness, syncope, or visual disturbances. No musculoskeletal pain or joint stiffness. No neurological deficits, such as numbness or weakness, and no dermatological changes like rashes.",
+    "immunizationHistory": "Up-to-date with routine vaccinations, including the flu vaccine received last fall. No recent travel-related vaccinations."
+  },
+  "patientFollowUps": [
+    {
+      "dateAndTimeOfAppointment": "14/06/2025 10:00:00",
+      "followUpNewDetailsMarkdown": "Since the last visit, Sarah's cholesterol levels have significantly improved. Her LDL dropped from 250 mg/dL to 190 mg/dL after starting Atorvastatin. She has not experienced new symptoms such as chest pain, dizziness, or palpitations. She continues to adhere to her recommended exercise regimen and dietary modifications.",
+      "followUpAssessmentPlanMarkdown": "Although her cholesterol has improved, it remains elevated. Continue Atorvastatin 20 mg daily and maintain lifestyle changes. Reassess cholesterol levels in 3 months and consider increasing the statin dosage if LDL is still above target levels. Continue supporting her lifestyle changes and stress management."
+    }
+  ]
+}
+]
