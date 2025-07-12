@@ -2,3 +2,7 @@ google-cloud-vision
 pyjson5
 google-genai
 google-cloud-storage
+fastapi
+uvicorn[standard]
+python-multipart
+requests
