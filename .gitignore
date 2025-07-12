@@ -1,2 +1,6 @@
+gen_lang_client*.json
+.ds_store
+.env
+venv
 node_modules
 .vite
