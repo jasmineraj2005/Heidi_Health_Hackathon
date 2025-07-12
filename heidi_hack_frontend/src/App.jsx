@@ -8,9 +8,7 @@ import { streamAssistantResponse } from './api/useChatStream'
 import LogoHeader from './components/LogoHeader'
 
 function App() {
-  const [messages, setMessages] = useState([
-    { role: 'assistant', text: "Hi! I'm ChatGPT. How can I help you today?" }
-  ])
+  const [messages, setMessages] = useState([])
   const [input, setInput] = useState('')
   const [isStreaming, setIsStreaming] = useState(false)
   const [sentQuery, setSentQuery] = useState('')

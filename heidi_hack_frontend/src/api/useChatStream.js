@@ -21,8 +21,7 @@ export async function streamAssistantResponse(input, setMessages) {
   const reader = response.body.getReader();
   const decoder = new TextDecoder('utf-8');
 
-  let num_iterations = 0;
-  while (true && num_iterations < 100) {
+  while (true) {
     const { done, value } = await reader.read();
     if (done) break;
     const text = decoder.decode(value, { stream: true });
@@ -37,6 +36,5 @@ export async function streamAssistantResponse(input, setMessages) {
       return newMessages
     })
 
-    num_iterations += 1;
   }
 }
