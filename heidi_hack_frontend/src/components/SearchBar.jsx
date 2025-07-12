@@ -50,7 +50,9 @@ function SearchBar({ input, setInput, handleSubmit, isStreaming }) {
   return (
     <div className="search-container" ref={searchContainerRef} style={{ 
       width: '100%', 
-      position: 'relative'
+      maxWidth: '800px',
+      position: 'relative',
+      margin: '0 auto'
     }}>
       <Motion.div
         className="search-bar-wrapper"
