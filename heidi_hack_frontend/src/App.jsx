@@ -4,7 +4,7 @@ import LeftNav from './components/LeftNav'
 import RightNav from './components/RightNav'
 import MiddleRenderZone from './components/MiddleRenderZone'
 import { useState } from 'react'
-import { streamAssistantResponse } from './useChatStream'
+import { streamAssistantResponse } from './api/useChatStream'
 
 function App() {
   const [messages, setMessages] = useState([
