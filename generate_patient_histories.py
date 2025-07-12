@@ -59,6 +59,13 @@ type PatientFollowUp = {
 
 "importanceOrder" contains the other keys in order of importance, e.g. ["chiefComplaintAndPresentIllness", "medicationsAndAllergies", ...]
 "dateAndTimeOfAppointment" contains the date and time of the appointment in "DD/MM/YYYY HH:MM:SS" 24-hour format.
+
+You should output as the following type:
+
+type Output = {
+    initialClinicalPatientHistory: InitialClinicalPatientHistory;
+    patientFollowUps: PatientFollowUp[];
+};
 '''
 
 from gemini_api import gemini_get_basic_text_prompt_output
